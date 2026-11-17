@@ -20,14 +20,8 @@ variable "sql_db_password" {
   description = "Senha padrão do banco"
 }
 
-variable "allowed_db_cidr_blocks" {
-  type        = list(string)
-  description = "CIDRs das subnets privadas autorizadas a acessar o SQL Server"
-  default     = ["10.0.0.0/16"]
-}
-
-variable "cluster_name" {
-  description = "Name of the local Kubernetes cluster created with kind."
+variable "vpc_name" {
   type        = string
-  default     = "garageflow"
+  description = "Tag Name da VPC criada pelo fiap-garageflow-k8s-infra"
+  default     = "garage-flow-vpc"
 }
