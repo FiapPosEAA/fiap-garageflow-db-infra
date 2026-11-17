@@ -19,7 +19,7 @@ resource "aws_security_group" "sql_server_sg" {
 }
 
 resource "aws_db_subnet_group" "sql_server" {
-  name       = "garage-flow-db-subnets"
+  name = "garage-flow-db-subnets"
   subnet_ids = [
     aws_subnet.garage_flow_private_subnet_az_a.id,
     aws_subnet.garage_flow_private_subnet_az_b.id,
@@ -38,4 +38,3 @@ resource "aws_db_instance" "sql_server" {
   skip_final_snapshot    = true
   vpc_security_group_ids = [aws_security_group.sql_server_sg.id]
 }
-
